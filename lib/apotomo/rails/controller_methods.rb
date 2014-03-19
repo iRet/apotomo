@@ -92,7 +92,7 @@ module Apotomo
 
         render :text => "<html><body><script type='text/javascript' charset='utf-8'>
 var loc = document.location;
-with(window.parent) { setTimeout(function() { window.eval('#{escaped_script}'); window.loc && loc.replace('about:blank'); }, 1) }
+with(window.parent) { setTimeout(function() { window.eval('#{escaped_script}'); window.loc && loc.replace('about:blank'); $(document).trigger('ajaxComplete'); }, 1) }
 </script></body></html>", :content_type => 'text/html'
       end
     end
